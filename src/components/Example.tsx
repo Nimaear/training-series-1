@@ -1,29 +1,38 @@
 import React, { useEffect, useState, useCallback } from "react";
 
 interface ExampleProps {
-  message: string;
+  defaultMessage: number;
+  max?: number;
+  onChange?: (value: number) => void;
 }
 
-const Example: React.FC<ExampleProps> = ({ message }) => {
-  const [counter, setCounter] = useState(0);
+const Example: React.FC<ExampleProps> = ({
+  onChange,
+  defaultMessage,
+  max = 10
+}) => {
+  const [message, setMessage] = useState(defaultMessage);
 
-  const increase = useCallback(() => {
-    setCounter(counter + 1);
-    console.log("scroollllll", message, counter);
-  }, [setCounter, counter]);
+  const handleChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
+    let newMessage = parseInt(event.currentTarget.value, 10);
+    if (newMessage > max) {
+      newMessage = 0;
+    }
+    setMessage(newMessage);
+    if (onChange) {
+      onChange(newMessage);
+    }
+  };
 
   useEffect(() => {
-    const myHandler = () => {
-      increase();
-    };
-    window.addEventListener("scroll", myHandler);
+    setMessage(defaultMessage);
+  }, [defaultMessage, setMessage]);
 
-    return () => {
-      window.removeEventListener("scroll", myHandler);
-    };
-  }, [increase]);
-
-  return <div style={{ position: "absolute", top: 0, right: 0 }}>Example</div>;
+  return (
+    <div style={{ position: "absolute", top: 0, right: 0 }}>
+      <input value={message.toString()} onChange={handleChange} />
+    </div>
+  );
 };
 
 export default Example;

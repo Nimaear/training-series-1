@@ -5,201 +5,20 @@ import Example from "./components/Example";
 // useState
 // useCallback
 // useEffect
+//
 
 const App: React.FC = () => {
-  const [show, setShow] = useState(true);
+  const [counter, setCounter] = useState(0);
 
   console.log("App is rerendering");
   return (
     <div className="App">
-      <Button content="toggle" onClick={() => setShow(!show)} />
-      {show && <Example message="the window" />}
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
-      Scroll
-      <br />
+      My counter: {counter}
+      <Button content="toggle" onClick={() => setCounter(counter + 1)} />
+      <Example
+        defaultMessage={counter}
+        onChange={newCounter => setCounter(newCounter)}
+      />
     </div>
   );
 };
