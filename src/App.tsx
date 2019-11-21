@@ -1,35 +1,205 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Button from "./components/Button";
+import Example from "./components/Example";
 
 // useState
 // useCallback
 // useEffect
 
 const App: React.FC = () => {
-  const [counter, setCounter] = useState(0);
-
-  // setInterval(() => {
-  //   setCounter(counter + 1);
-
-  const increase = useCallback(() => {
-    setCounter(counter + 1);
-  }, [counter]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      increase();
-    }, 1000);
-  });
-
-  const clickH = useCallback(() => {
-    console.log("hello");
-  }, [increase]);
+  const [show, setShow] = useState(true);
 
   console.log("App is rerendering");
   return (
     <div className="App">
-      Counter: {counter}
-      <Button onClick={clickH} content="Click me" />
+      <Button content="toggle" onClick={() => setShow(!show)} />
+      {show && <Example message="the window" />}
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
+      Scroll
+      <br />
     </div>
   );
 };
