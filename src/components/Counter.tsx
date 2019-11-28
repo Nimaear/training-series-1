@@ -1,15 +1,12 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AppState } from "store/rootReducer";
-import { increment, decrement } from "store/counter/counterActions";
+import useCounter from "../hooks/useCounter";
 
 const Counter: React.FC = () => {
-  const dispatch = useDispatch();
-  const count = useSelector((state: AppState) => state.counter.count);
+  const { count, increment, decrement } = useCounter();
   return (
     <div>
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
       <br />
       Counter is at: {count}
     </div>
