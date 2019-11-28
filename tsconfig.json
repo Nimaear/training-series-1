@@ -3,7 +3,10 @@
     "outDir": "build/dist",
     "module": "esNext",
     "target": "es6",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "sourceMap": true,
     "skipLibCheck": true,
     "jsx": "react",
@@ -18,9 +21,24 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "strictNullChecks": false,
-    "typeRoots": ["./node_modules/@types", "./src/@types"]
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
   },
-  "include": ["./src"],
-  "exclude": ["node_modules", "build", "jest"],
-  "types": ["typePatches"]
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "jest"
+  ],
+  "types": [
+    "typePatches"
+  ]
 }
