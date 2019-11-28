@@ -1,25 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "outDir": "build/dist",
+    "module": "esNext",
+    "target": "es6",
+    "lib": ["dom", "esnext"],
+    "sourceMap": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "jsx": "react",
     "noEmit": true,
-    "jsx": "react"
+    "pretty": true,
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "strictNullChecks": false,
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["./src"],
+  "exclude": ["node_modules", "build", "jest"],
+  "types": ["typePatches"]
 }
